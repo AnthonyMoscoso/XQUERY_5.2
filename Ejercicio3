@@ -1,0 +1,8 @@
+for $sucursales  in (//sucursal)
+let $codigo:=(//$sucursales/@codigo)
+let $Ncuenta:=(count($sucursales/cuenta[@tipo="AHORRO"]))
+return
+<resul>
+<codigo>{$codigo}</codigo>
+<cuentas_ahorro>{$Ncuenta} </cuentas_ahorro>
+</resul>

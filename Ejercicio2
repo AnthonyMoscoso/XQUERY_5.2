@@ -1,0 +1,9 @@
+for $zona in distinct-values (//cod_zona)
+let $precie:=max(//produc[cod_zona=$zona]/precio)
+for $denom in (//produc[precio=$precie]/denominacion)
+return
+<resul>
+<zona>{$zona}</zona>
+{$denom}
+<precie>{$precie}</precie>
+</resul>

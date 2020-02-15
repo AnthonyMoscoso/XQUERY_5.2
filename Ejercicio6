@@ -1,0 +1,8 @@
+for $zonas in (//zona)
+let $Nzona:=($zonas/nombre)
+let $Czona:=($zonas/cod_zona)
+let $Npro:=(count(//produc[cod_zona=$Czona]))
+return
+<productos_por_zona>{$Nzona}
+{$Npro}
+</productos_por_zona>

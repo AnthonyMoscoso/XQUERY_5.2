@@ -1,0 +1,6 @@
+for $zona in distinct-values (//cod_zona)
+for $products in count(//produc[cod_zona=$zona])
+return <result>
+<zona>{$zona}</zona>
+<productos>{$products}</productos>
+</result>

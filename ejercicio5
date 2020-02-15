@@ -1,0 +1,11 @@
+for $productos in (//produc)
+let $codZona:=($productos/cod_zona)
+let $nombre:=($productos/denominacion)
+let $precio:=($productos/precio)
+let $Nzona:=(/zonas/zona[cod_zona=$codZona]/nombre)
+order by $Nzona
+return
+<producto>{$nombre}
+{$Nzona}
+{$precio}
+</producto>

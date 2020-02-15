@@ -1,0 +1,9 @@
+for $sucursales  in (//sucursal/cuenta[@tipo="PENSIONES"])
+let $maxAportacion:=max(//sucursal/cuenta/aportacion)
+let $aportacion:=($sucursales/aportacion)
+return 
+if($aportacion=$maxAportacion) then
+<resul>
+<cuenta>{$sucursales}</cuenta>
+</resul>
+else()
